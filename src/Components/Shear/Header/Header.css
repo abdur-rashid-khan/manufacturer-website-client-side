@@ -1,0 +1,10 @@
+.navbar a {
+  color: #000000;
+}
+.navbar ul li a:hover{
+  color: blueviolet;
+}
+.menu[class*="p-"] li > *, .menu[class^="p-"] li > * {
+  padding: 0px 10px;
+  background-color: transparent;
+}
