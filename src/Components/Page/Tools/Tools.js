@@ -1,16 +1,18 @@
 import React from 'react';
 import LoadingProducts from '../../Hook/LoadingProducts';
 
-const Products = () => {
+const Tools = () => {
   const [products] = LoadingProducts();
-  const productsSlice = products.slice(0, 10);
   return (
-    <div className='container mx-auto px-4'>
-      <h1 className='text-center text-3xl text-blue-700 py-8 font-serif font-semibold'>Tots and parch</h1>
-      <div>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4'>
+    <div className='container mx-auto px-2'>
+      <div className='pt-20 py-6'>
+        <div className="text-center py-6">
+          <h1 className='text-2xl text-blue-600 font-serif font-semibold'>Totals Tools and Parts </h1>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  gap-4">
           {
-            productsSlice.map(p =>
+            products.map(p=>
+              
               <div className="bg-slate-200 border shadow-lg rounded-lg" key={p._id}>
                 <div className=''>
                   <img src={p.images} alt={p.productsTitle} style={{ width: '100%', height: '350px' }} />
@@ -22,7 +24,10 @@ const Products = () => {
                   <p className=' text-slate-700 p-2'>{p.description.slice(0, 100)}</p>
                 </div>
                 <button className='text-center bg-blue-700 hover:bg-blue-600 w-full py-2 rounded-t mt-4 text-white'>purchase</button>
-              </div>)
+              </div>
+              
+              
+              )
           }
         </div>
       </div>
@@ -30,4 +35,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Tools;

@@ -1,20 +1,43 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const AddProduct = () => {
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (e) => {
-    
+    const products ={
+      productTitle:e.productTitle,
+      price:e.price,
+      quantity:e.quantity,
+      images:e.images,
+      description:e.description
+      
+    }
+    fetch('http://localhost:5000/products',{
+      method:'POST',
+      headers:{
+        'content-type':'application/json',
+      },
+      body:JSON.stringify(products)
+    })
+    .then(res => res.json())
+    .then(data=>{
+      if(data.acknowledged){
+        Swal.fire('Data insert success');
+        reset();
+      }
+    })
   }
   return (
     <div className="md:max-w-lg w-full bg-slate-800 p-4 rounded mx-auto ">
       <div className="header text-center pt-6 ">
-        <h1 className='text-2xl text-slate-700 font-serif text-white'>Add Product</h1>
+        <h1 className='text-2xl  font-serif text-white'>Add Product</h1>
       </div>
       <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
         <input type="hidden" name="remember" defaultValue="true" />

@@ -16,6 +16,7 @@ import Review from './Components/DashBoard.js/Review/Review';
 import ManageProducts from './Components/DashBoard.js/ManageProducts/ManageProducts';
 import ManageOrder from './Components/DashBoard.js/ManageOrder/ManageOrder';
 import AllUser from './Components/DashBoard.js/AllUser/AllUser';
+import Tools from './Components/Page/Tools/Tools';
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
               <AddProduct></AddProduct>
           }></Route>
         </Route>
+        <Route path='/tools-parts' element={<RequireAuth>
+          <Tools></Tools>
+        </RequireAuth>} />
       </Routes>
     </>
   );
