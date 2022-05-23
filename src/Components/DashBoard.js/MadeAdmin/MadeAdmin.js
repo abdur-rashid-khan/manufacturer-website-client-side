@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import Swal from 'sweetalert2';
+import { signOut } from 'firebase/auth';
+import auth from '../../../firebase.init';
 
 const MadeAdmin = ({user , refetch ,index}) => {
   const adminBtn =()=>{
@@ -13,13 +15,15 @@ const MadeAdmin = ({user , refetch ,index}) => {
       })
       .then(res => {
         if(res.status===403){
-            return Swal.fire('Forbidden' ,' ','error');
+          Swal.fire('unauthorized user' ,' ','error');
+          signOut(auth);
+          localStorage.removeItem('token');
+          return navigator('/login');
         }
         return res.json()
     })
     .then(data => {
-        console.log(data);
-        Swal.fire('create admin successfully' ,' ','success');
+        Swal.fire('created admin successfully' ,' ','success');
         refetch()
     })
   }
@@ -30,7 +34,7 @@ const MadeAdmin = ({user , refetch ,index}) => {
       <td>{user.email}</td>
       {
         user.role==='admin'?  
-        <td><button disabled className='p-2 px-6 bg-slate-800 rounded'>Admin</button></td>
+        <td><button disabled className='p-2 px-6 bg-slate-00 rounded'>Admin</button></td>
         :
         <td><button onClick={adminBtn} className='p-2 px-6 bg-blue-700 hover:bg-blue-600 text-white rounded'>Admin</button></td>
       }
