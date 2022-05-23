@@ -1,9 +1,21 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
 import CustomLink from '../../Active/CustomLink';
+import Loading from '../Loading/Loading';
+import { signOut } from 'firebase/auth';
 import './Header.css'
 
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const logOutBtn = () => {
+    signOut(auth);
+  }
+  if (loading) {
+    return <Loading></Loading>
+  }
+
   return (
     <nav className="bg-slate-200  shadow fixed z-50 w-full">
       <div className="container mx-auto w-full navbar px-4">
@@ -29,23 +41,23 @@ const Header = () => {
               tabIndex="0"
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-slate-400 rounded w-52"
             >
-              <li>
-                <CustomLink className='text-base my-2' to={"/"}>Home</CustomLink>
+              <li className='pt-4 text-lg text-white'>
+                <CustomLink to={"/"}>Home</CustomLink>
               </li>
-              <li>
-                <CustomLink className='text-base my-2' to={"/about"}>About</CustomLink>
+              <li className='pt-4 text-lg text-white'>
+                <CustomLink to={"/tools-parts"}>Tools and Parts</CustomLink>
               </li>
-              <li>
-                <CustomLink className='text-base my-2' to={"/appointment"}>Appointment</CustomLink>
+              <li className='pt-4 text-lg text-white'>
+                <CustomLink to={"/about"}>My Order</CustomLink>
               </li>
-              <li>
-                <CustomLink className='text-base my-2' to={"/reviews"}>Reviews</CustomLink>
+              <li className='pt-4 text-lg text-white'>
+                <CustomLink to={"/reviews"}>Reviews</CustomLink>
               </li>
-              <li>
-                <CustomLink className='text-base my-2' to={"/contact"}>Contact Us</CustomLink>
+              <li className='pt-4 text-lg text-white'>
+                <CustomLink to={"/blog"}>Blog</CustomLink>
               </li>
-              <li>
-                <CustomLink className='text-base my-2' to={'/dashboard'} >Dashboard</CustomLink>
+              <li className='pt-4 text-lg text-white'>
+                <CustomLink to={'/dashboard'} >Dashboard</CustomLink>
               </li>
             </ul>
           </div>
@@ -58,20 +70,27 @@ const Header = () => {
                 <CustomLink to={"/"}>Home</CustomLink>
               </li>
               <li>
-                <CustomLink to={"/about"}>My Order</CustomLink>
+                <CustomLink to={"/tools-parts"}>Tools and Parts</CustomLink>
               </li>
+              {
+                user && <li><CustomLink to={"/about"}>My Order</CustomLink></li>
+              }
               <li>
                 <CustomLink to={"/reviews"}>Reviews</CustomLink>
               </li>
               <li>
-                <CustomLink to={"/contact"}>Contact Us</CustomLink>
+                <CustomLink to={"/blog"}>Blog</CustomLink>
               </li>
-              <li>
-              <CustomLink to={'/dashboard'} >Dashboard</CustomLink>
-              </li>
+              {
+                user && <li><CustomLink to={'/dashboard'} >Dashboard</CustomLink></li>
+              }
             </ul>
           </div>
-          <Link to={'/login'} >Login</Link>
+          {
+            user ? <button onClick={logOutBtn} className="text-black font-semibold">logOut</button> :
+              <Link to={'/login'} >Login</Link>
+          }
+
         </div>
       </div>
     </nav>
