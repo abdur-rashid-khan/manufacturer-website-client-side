@@ -6,19 +6,19 @@ import LoginGoogle from '../LoginGoogle/LoginGoogle';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shear/Loading/Loading';
+import useToken from '../../Hook/useToken';
 
 const SignUp = () => {
   const [agree, setAgree] = useState(false);
   const navigate = useNavigate();
-  // const location = useLocation();
-  // const form = location.state?.from?.pathname || "/";
+  const location = useLocation();
+  const form = location.state?.from?.pathname || "/";
 
   const [updateProfile] = useUpdateProfile(auth);
-
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   // token hook
-  // const [token] = UseToken(user);
+  const [token] = useToken(user);
   const {
     register,
     handleSubmit,
@@ -30,11 +30,11 @@ const SignUp = () => {
     await updateProfile({ displayName: e.userName });
   };
   useEffect(() => {
-    if (user) {
-      navigate('/login');
+    if (token) {
+      navigate(form, { replace: true });
       Swal.fire("your account create successfully", "", "success");
     }
-  }, [user, navigate])
+  }, [token, navigate,form])
 
   let errorElement = "";
   if (error) {

@@ -6,6 +6,7 @@ import Loading from "../../Shear/Loading/Loading";
 import Swal from "sweetalert2";
 import auth from "../../../firebase.init";
 import LoginGoogle from "../LoginGoogle/LoginGoogle";
+import UseToken from "../../Hook/useToken";
 
 
 import "./Login.css";
@@ -22,7 +23,7 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
   // hook
-  // const [token] = UseToken(user);
+  const [token] = UseToken(user);
   const {
     register,
     handleSubmit,
@@ -35,11 +36,11 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (user) {
+    if (token) {
       navigate(form, { replace: true });
       Swal.fire("Login successfully", "", "success");
     }
-  }, [user, navigate,form])
+  }, [token, navigate,form])
 
   if (loading) {
     return <Loading></Loading>;

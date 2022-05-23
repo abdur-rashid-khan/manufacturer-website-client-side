@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import {  useSignInWithGoogle } from "react-firebase-hooks/auth";
 import Loading from "../../Shear/Loading/Loading";
 import googleIcon from '../../../assets/icons/google.png'
+import UseToken from "../../Hook/useToken";
 
 
 
@@ -15,7 +16,7 @@ const LoginGoogle = () => {
   let errorElement = "";
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   // token hook
-  // const [token] = UseToken(user || fbUser);
+  const [token] = UseToken(user);
 
   // for google
   const loginWithGoogle = () => {
@@ -32,11 +33,11 @@ const LoginGoogle = () => {
 
 
   useEffect(() => {
-    if (user) {
+    if (token) {
       navigate(form, { replace: true });
       Swal.fire("Login successfully", "", "success");
     }
-  }, [user, navigate, form])
+  }, [token, navigate, form])
 
 
   if (loading ) {

@@ -11,6 +11,7 @@ const Header = () => {
   const [user, loading, error] = useAuthState(auth);
   const logOutBtn = () => {
     signOut(auth);
+    localStorage.removeItem('token');
   }
   if (loading) {
     return <Loading></Loading>
@@ -61,7 +62,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <Link to={'/'} className="btn btn-ghost normal-case text-xl">Doctors Portal</Link>
+          <Link to={'/'} className="btn btn-ghost normal-case text-xl">Max Tools and Parts</Link>
         </div>
         <div className="navbar-end">
           <div className="navbar-center hidden lg:flex">
