@@ -12,8 +12,8 @@ const Products = () => {
           {
             productsSlice.map(p =>
               <div className="bg-slate-200 border shadow-lg rounded-lg" key={p._id}>
-                <div className=''>
-                  <img src={p.images} alt={p.productsTitle} style={{ width: '100%', height: '350px' }} />
+                <div className='' style={{height:'380px'}}>
+                  <img src={p.images} alt={p.productsTitle} style={{width:'100%',margin:'auto'}} />
                 </div>
 
                 <div className='pt-4 '>

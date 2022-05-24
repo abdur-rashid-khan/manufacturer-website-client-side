@@ -178,7 +178,9 @@ const Login = () => {
                 </div>
               </div>
               <div>
-                {/* {errorElement} */}
+                <p className="text-red-600">
+                {errorElement}
+                </p>
               </div>
               <div>
                 <button

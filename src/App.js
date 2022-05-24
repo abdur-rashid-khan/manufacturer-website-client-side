@@ -1,10 +1,7 @@
 import Header from './Components/Shear/Header/Header'
 import './App.css';
 import Home from './Components/Home/Home';
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
+import {Routes,Route,} from "react-router-dom";
 import Login from './Components/Page/Login/Login';
 import SignUp from './Components/Page/SignUp/SignUp';
 import Blog from './Components/Page/Blog/Blog';
@@ -17,6 +14,10 @@ import ManageProducts from './Components/DashBoard.js/ManageProducts/ManageProdu
 import ManageOrder from './Components/DashBoard.js/ManageOrder/ManageOrder';
 import AllUser from './Components/DashBoard.js/AllUser/AllUser';
 import Tools from './Components/Page/Tools/Tools';
+import AdminChecking from './Components/Page/AdminChecking/AdminChecking';
+import Profile from './Components/DashBoard.js/Profile/Profile';
+import MyOrder from './Components/DashBoard.js/MyOrder/MyOrder';
+import PageNotFound from './Components/PageNotFound/PageNotFound';
 
 function App() {
   return (
@@ -30,19 +31,28 @@ function App() {
         <Route path="dashboard" element={<RequireAuth>
           <DashBoard />
         </RequireAuth>} >
-          <Route index element={<ManageOrder></ManageOrder>}></Route>
+          <Route index element={<Profile></Profile>}></Route>
+          <Route path='my-order' element={<MyOrder></MyOrder>}></Route>
           <Route path='review' element={<Review></Review>}></Route>
-          <Route path='all-user' element={<AllUser></AllUser>}></Route>
-          <Route path='manage-products' element={<ManageProducts></ManageProducts>}></Route>
+          <Route path='all-user' element={<AdminChecking>
+            <AllUser></AllUser>
+          </AdminChecking>}></Route>
+          <Route path='manage-products' element={
+            <AdminChecking>
+              <ManageProducts></ManageProducts>
+            </AdminChecking>
+          }></Route>
           <Route path='manage-order' element={<ManageOrder></ManageOrder>}></Route>
-          <Route path='add-product' element={<AddProduct></AddProduct>}></Route>
           <Route path='add-product' element={
+            <AdminChecking>
               <AddProduct></AddProduct>
+            </AdminChecking>
           }></Route>
         </Route>
         <Route path='/tools-parts' element={<RequireAuth>
           <Tools></Tools>
         </RequireAuth>} />
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
     </>
   );

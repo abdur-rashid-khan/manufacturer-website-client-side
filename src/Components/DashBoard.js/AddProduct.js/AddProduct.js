@@ -1,6 +1,8 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const AddProduct = () => {
   const {
@@ -23,13 +25,22 @@ const AddProduct = () => {
       method:'POST',
       headers:{
         'content-type':'application/json',
+        authorization:`Bearer ${localStorage.getItem('token')}`,
       },
       body:JSON.stringify(products)
     })
-    .then(res => res.json())
+    .then(res => {
+      if(res.status===403){
+        Swal.fire('unauthorized user' ,' ','error');
+        signOut(auth);
+        localStorage.removeItem('token');
+        return navigator('/login');
+      }
+      return res.json()
+    })
     .then(data=>{
       if(data.acknowledged){
-        Swal.fire('Data insert success');
+        Swal.fire('Data insert success','','success');
         reset();
       }
     })

@@ -4,9 +4,11 @@ import { Link, Outlet } from 'react-router-dom';
 import { BeakerIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import useAdmin from '../Hook/useAdmin';
 
 const DashBoard = () => {
 	const [user] = useAuthState(auth);
+	const [admin] = useAdmin(user);
 	return (
 		<div className="container mx-auto px-2 lg:px-0">
 			<div className="drawer drawer-mobile pt-16">
@@ -30,10 +32,15 @@ const DashBoard = () => {
 					<label htmlFor="open-dashboard-menu" className="drawer-overlay"></label>
 					<ul className="menu p-4 overflow-y-auto w-80 bg-slate-100 border-r-1 shadow-lg  text-zinc-800">
 						{/* <!-- Sidebar content here --> */}
-						<li className='py-1 text-lg hover:bg-slate-300 rounded'><Link className='' to={'/dashboard'}>Manage Order</Link></li>
-						<li className='py-1 text-lg hover:bg-slate-300 rounded'><Link className='py-2 ' to={'/dashboard/review'}>Review</Link></li>
+						<li className='py-1 text-lg hover:bg-slate-300 rounded'><Link className='' to={'/dashboard'}>My Profile</Link></li>
 						{
-							user && <>
+							!admin && <>
+								<li className='py-1 text-lg hover:bg-slate-300 rounded'><Link className='' to={'/dashboard/my-order'}>My Order</Link></li>
+								<li className='py-1 text-lg hover:bg-slate-300 rounded'><Link className='py-2 ' to={'/dashboard/review'}>Add Review</Link></li>
+							</>
+						}
+						{
+							admin && <>
 
 								<li className='py-1 text-lg hover:bg-slate-300 rounded'><Link className='py-2 ' to={'/dashboard/all-user'}>All Users</Link></li>
 								<li className='py-1 text-lg hover:bg-slate-300 rounded'><Link className='py-2 ' to={'/dashboard/manage-products'}>Manage Products</Link></li>

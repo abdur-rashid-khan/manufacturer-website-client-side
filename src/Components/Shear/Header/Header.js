@@ -49,9 +49,6 @@ const Header = () => {
                 <CustomLink to={"/tools-parts"}>Tools and Parts</CustomLink>
               </li>
               <li className='pt-4 text-lg text-white'>
-                <CustomLink to={"/about"}>My Order</CustomLink>
-              </li>
-              <li className='pt-4 text-lg text-white'>
                 <CustomLink to={"/reviews"}>Reviews</CustomLink>
               </li>
               <li className='pt-4 text-lg text-white'>
@@ -73,9 +70,6 @@ const Header = () => {
               <li>
                 <CustomLink to={"/tools-parts"}>Tools and Parts</CustomLink>
               </li>
-              {
-                user && <li><CustomLink to={"/about"}>My Order</CustomLink></li>
-              }
               <li>
                 <CustomLink to={"/reviews"}>Reviews</CustomLink>
               </li>
