@@ -18,6 +18,8 @@ import AdminChecking from './Components/Page/AdminChecking/AdminChecking';
 import Profile from './Components/DashBoard.js/Profile/Profile';
 import MyOrder from './Components/DashBoard.js/MyOrder/MyOrder';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
+import Purchase from './Components/Page/Purchase/Purchase';
+import Payment from './Components/Page/Payment/Payment';
 
 function App() {
   return (
@@ -52,6 +54,16 @@ function App() {
         <Route path='/tools-parts' element={<RequireAuth>
           <Tools></Tools>
         </RequireAuth>} />
+        <Route path='/purchase/:id' element={
+        <RequireAuth>
+          <Purchase />
+        </RequireAuth>
+        } />
+        <Route path='/payment/:id' element={
+        <RequireAuth>
+          <Payment />
+        </RequireAuth>
+        } />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
     </>

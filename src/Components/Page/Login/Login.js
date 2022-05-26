@@ -32,7 +32,6 @@ const Login = () => {
 
   const onSubmit = (e) => {
     signInWithEmailAndPassword(e.email, e.password);
-    console.log(e.email , e.password)
   };
 
   useEffect(() => {

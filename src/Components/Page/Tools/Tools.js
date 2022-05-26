@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import LoadingProducts from '../../Hook/LoadingProducts';
 
 const Tools = () => {
@@ -23,7 +24,7 @@ const Tools = () => {
                   <strong className='py-2 inline-block text-black p-2'>{p.productTitle}</strong>
                   <p className=' text-slate-700 p-2'>{p.description.slice(0, 100)}</p>
                 </div>
-                <button className='text-center bg-blue-700 hover:bg-blue-600 w-full py-2 rounded-t mt-4 text-white'>purchase</button>
+                <Link to={`/purchase/${p._id}`}  className='text-center bg-blue-700 hover:bg-blue-600 w-full py-2 rounded-t mt-4 text-white inline-block'>purchase</Link>
               </div>
               
               
