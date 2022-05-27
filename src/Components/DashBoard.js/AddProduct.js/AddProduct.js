@@ -46,15 +46,15 @@ const AddProduct = () => {
     })
   }
   return (
-    <div className="md:max-w-lg w-full bg-slate-800 p-4 rounded mx-auto ">
+    <div className="md:max-w-lg w-96 bg-slate-200 p-4 rounded mx-auto ">
       <div className="header text-center pt-6 ">
-        <h1 className='text-2xl  font-serif text-white'>Add Product</h1>
+        <h1 className='text-2xl  font-serif text-slate-700'>Add Product</h1>
       </div>
       <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
         <input type="hidden" name="remember" defaultValue="true" />
         <div className="rounded-md shadow-sm -space-y-px">
           <div className="">
-            <label htmlFor="productTitle" className="text-white pt-2">
+            <label htmlFor="productTitle" className="text-slate-700 pt-2">
               Product Title
             </label>
             <input
@@ -80,7 +80,7 @@ const AddProduct = () => {
             </label>
           </div>
           <div className="pt-3">
-            <label htmlFor="price" className="text-white pt-2">
+            <label htmlFor="price" className="text-slate-700 pt-2">
               Price
             </label>
             <input
@@ -106,7 +106,7 @@ const AddProduct = () => {
             </label>
           </div>
           <div className="pt-3">
-            <label htmlFor="quantity" className="text-white pt-2">
+            <label htmlFor="quantity" className="text-slate-700 pt-2">
               product quantity
             </label>
             <input
@@ -132,7 +132,7 @@ const AddProduct = () => {
             </label>
           </div>
           <div className="pt-3">
-            <label htmlFor="images" className="text-white pt-2">
+            <label htmlFor="images" className="text-slate-700 pt-2">
               Images
             </label>
             <input
@@ -158,7 +158,7 @@ const AddProduct = () => {
             </label>
           </div>
           <div className="pt-3">
-            <label htmlFor="description" className="text-white pt-2">
+            <label htmlFor="description" className="text-slate-700 pt-2">
               Product Description
             </label>
             <textarea

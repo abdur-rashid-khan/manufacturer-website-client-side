@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  return (
-    <footer className="bg-gray-200">
+  return ( 
+    <footer className="bg-gray-200 ">
       <div className="container mx-auto py-10 px-2">
         <div className="grid grid-cols-1 items-center justify-items-center  md:grid-cols-2 ">
           <div className="">

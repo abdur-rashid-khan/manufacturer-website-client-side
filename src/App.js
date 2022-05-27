@@ -20,6 +20,7 @@ import MyOrder from './Components/DashBoard.js/MyOrder/MyOrder';
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 import Purchase from './Components/Page/Purchase/Purchase';
 import Payment from './Components/Page/Payment/Payment';
+import Footer from './Components/Page/Footer/Footer';
 
 function App() {
   return (
@@ -66,6 +67,7 @@ function App() {
         } />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
+
     </>
   );
 }

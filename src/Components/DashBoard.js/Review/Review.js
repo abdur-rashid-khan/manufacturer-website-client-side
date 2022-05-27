@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+
 
 const Review = () => {
+  const [user, loading, error] = useAuthState(auth);
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (e) => {
+    
     const userData = {
-      name:e.userName,
-      imgUrl:e.imgUrl,
+      name:user.displayName,
+      rating:e.rating,
       review:e.review
     }
+    console.log(userData)
     fetch('http://localhost:5000/add-review',{
       method:'POST',
       headers:{
@@ -26,12 +33,13 @@ const Review = () => {
     .then(res => res.json())
     .then(data => {
       if(data){
-        Swal.fire('Review added success')
+        Swal.fire('Thank you for the rating','','success');
+        reset()
       }
     })
   }
   return (
-    <div>
+     <div className="w-96 m-auto bg-slate-100 shadow-xl p-4 rounded">
       <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
         <input type="hidden" name="remember" defaultValue="true" />
         <div className="rounded-md shadow-sm -space-y-px">
@@ -45,13 +53,15 @@ const Review = () => {
               type="text"
               autoComplete="userName"
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm "
-              placeholder="User Name"
-              {...register("userName", {
-                required: {
-                  value: true,
-                  message: "Please enter your name",
-                }
-              })}
+              value={user.displayName}
+              disabled
+              // placeholder="User Name"
+              // {...register("userName", {
+              //   required: {
+              //     value: true,
+              //     message: "Please enter your name",
+              //   }
+              // })}
             />
             <label className="">
               {errors.userName?.type === "required" && (
@@ -62,27 +72,45 @@ const Review = () => {
             </label>
           </div>
           <div className="pt-3">
-            <label htmlFor="imgUrl" className="text-slate-700 pt-2">
-              Your profile img url 
+            <label htmlFor="rating" className="text-slate-700 pt-2">
+              Rating
             </label>
             <input
-              id="imgUrl"
-              name="imgUrl"
-              type="text"
-              autoComplete="imgUrl"
+              id="rating"
+              name="rating"
+              type="number"
+              autoComplete="rating"
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm "
-              placeholder="Your profile img url "
-              {...register("imgUrl", {
+              placeholder="product for rating  "
+              {...register("rating", {
                 required: {
                   value: true,
-                  message: "Please enter your img url",
+                  message: "Give a rating ",
+                },
+                min:{
+                  value : 1,
+                  message: "Give a rating between 1 and 5"
+                } ,
+                max: {
+                  value:5,
+                  message: "Give a rating between 1 and 5"
                 },
               })}
             />
             <label className="">
-              {errors.imgUrl?.type === "required" && (
+              {errors.rating?.type === "required" && (
                 <span className="text-red-500 text-sm pt-2">
-                  {errors.imgUrl.message}
+                  {errors.rating.message}
+                </span>
+              )}
+              {errors.rating?.type === "min" && (
+                <span className="text-red-500 text-sm pt-2">
+                  {errors.rating.message}
+                </span>
+              )}
+              {errors.rating?.type === "max" && (
+                <span className="text-red-500 text-sm pt-2">
+                  {errors.rating.message}
                 </span>
               )}
             </label>

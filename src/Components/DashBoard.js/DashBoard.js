@@ -5,11 +5,13 @@ import { BeakerIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import useAdmin from '../Hook/useAdmin';
+import Footer from '../Page/Footer/Footer';
 
 const DashBoard = () => {
 	const [user] = useAuthState(auth);
 	const [admin] = useAdmin(user);
 	return (
+		<>
 		<div className="container mx-auto px-2 lg:px-0">
 			<div className="drawer drawer-mobile pt-16">
 				<input id="open-dashboard-menu" type="checkbox" className="drawer-toggle" />
@@ -54,6 +56,8 @@ const DashBoard = () => {
 				</div>
 			</div>
 		</div>
+	<Footer></Footer>
+		</>
 	);
 };
 

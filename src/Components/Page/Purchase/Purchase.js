@@ -46,7 +46,6 @@ const Purchase = () => {
       quantity:count,
       email:user.email,
       productsId:id,
-      pay:false,
     }
     fetch(`http://localhost:5000/order/${id}`,{
       method:"post",

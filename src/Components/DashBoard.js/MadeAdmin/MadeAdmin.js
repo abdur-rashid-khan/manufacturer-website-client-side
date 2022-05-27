@@ -29,7 +29,6 @@ const MadeAdmin = ({ user, refetch, index }) => {
   }
   // delete
   const deleteBtn = () => {
-    window.confirm('are you sure delete user info')
     fetch(`http://localhost:5000/user/delete/${user.email}`, {
       method: 'DELETE',
       headers: {
@@ -58,7 +57,7 @@ const MadeAdmin = ({ user, refetch, index }) => {
       <td>{user.email}</td>
       {
         user.role === 'admin' ?
-          <td><button disabled className='p-2 px-6 bg-slate-800 rounded'>Admin</button></td>
+          <td><button disabled className='p-2 px-6 bg-slate-800 text-white rounded'>Admin</button></td>
           :
           <td><button onClick={adminBtn} className='p-2 px-6 bg-blue-700 hover:bg-blue-600 text-white rounded'>Admin</button></td>
       }

@@ -12,7 +12,7 @@ const firebaseConfig = {
   storageBucket: "max-shop-99fc1.appspot.com",
   messagingSenderId: "608897462574",
   appId: "1:608897462574:web:2ee2c8968253f421a8cabf"
-};
+}; 
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

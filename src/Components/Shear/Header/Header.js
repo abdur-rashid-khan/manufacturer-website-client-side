@@ -48,9 +48,9 @@ const Header = () => {
               <li className='pt-4 text-lg text-white'>
                 <CustomLink to={"/tools-parts"}>Tools and Parts</CustomLink>
               </li>
-              <li className='pt-4 text-lg text-white'>
+              {/* <li className='pt-4 text-lg text-white'>
                 <CustomLink to={"/reviews"}>Reviews</CustomLink>
-              </li>
+              </li> */}
               <li className='pt-4 text-lg text-white'>
                 <CustomLink to={"/blog"}>Blog</CustomLink>
               </li>
@@ -70,9 +70,9 @@ const Header = () => {
               <li>
                 <CustomLink to={"/tools-parts"}>Tools and Parts</CustomLink>
               </li>
-              <li>
+              {/* <li>
                 <CustomLink to={"/reviews"}>Reviews</CustomLink>
-              </li>
+              </li> */}
               <li>
                 <CustomLink to={"/blog"}>Blog</CustomLink>
               </li>
