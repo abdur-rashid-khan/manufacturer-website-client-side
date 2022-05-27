@@ -6,7 +6,7 @@ import auth from '../../../firebase.init';
 const DisplayManageProducts = ({ manageProducts, index, refetch }) => {
   // delete
   const deleteBtn = () => {
-    fetch(`http://localhost:5000/manage-products/${manageProducts._id}`, {
+    fetch(`https://mighty-everglades-10453.herokuapp.com/manage-products/${manageProducts._id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',

@@ -14,7 +14,7 @@ const MyOrder = () => {
   const [user, loading] = useAuthState(auth);
   const email = user.email;
   const { isLoading, error, data, refetch } = useQuery('orderDataForUser', () =>
-    fetch(`http://localhost:5000/my-order/${email}`, {
+    fetch(`https://mighty-everglades-10453.herokuapp.com/my-order/${email}`, {
       method: 'GET',
       headers: {
         authorization: `Bearer ${localStorage.getItem('token')}`,

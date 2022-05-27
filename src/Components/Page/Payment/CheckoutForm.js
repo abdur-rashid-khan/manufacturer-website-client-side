@@ -14,7 +14,7 @@ const CheckoutForm = ({ orderProducts }) => {
 
   useEffect(() => {
     if(price){
-      fetch(`http://localhost:5000/create-payment-intent`, {
+      fetch(`https://mighty-everglades-10453.herokuapp.com/create-payment-intent`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -79,7 +79,7 @@ const {paymentIntent , error:intentError}= await stripe.confirmCardPayment(
       console.log(paymentIntent.id);
       const payment = paymentIntent.id;
       console.log(payment)
-      fetch(`http://localhost:5000/payment/${_id}`,{
+      fetch(`https://mighty-everglades-10453.herokuapp.com/payment/${_id}`,{
         method:"PUT",
         headers:{
           'content-type':'application.json',

@@ -13,7 +13,7 @@ const Purchase = () => {
   const { id } = useParams();
   const navigate = useNavigate()
   const { isLoading, error, data: products } = useQuery('singleProducts', () =>
-    fetch(`http://localhost:5000/purchase/${id}`, {
+    fetch(`https://mighty-everglades-10453.herokuapp.com/purchase/${id}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -47,7 +47,7 @@ const Purchase = () => {
       email:user.email,
       productsId:id,
     }
-    fetch(`http://localhost:5000/order/${id}`,{
+    fetch(`https://mighty-everglades-10453.herokuapp.com/order/${id}`,{
       method:"post",
       headers:{
         'content-type':'application/json',

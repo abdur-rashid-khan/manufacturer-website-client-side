@@ -10,7 +10,7 @@ import DisplayReview from './DisplayReview';
 const ReviewSecction = () => {
   const navigate = useNavigate();
   const { isLoading, error, data: review, refetch } = useQuery('reviewSection', () =>
-    fetch('http://localhost:5000/review', {
+    fetch('https://mighty-everglades-10453.herokuapp.com/review', {
       method: 'GET',
       headers: {
         authorization: `Bearer ${localStorage.getItem('token')}`,

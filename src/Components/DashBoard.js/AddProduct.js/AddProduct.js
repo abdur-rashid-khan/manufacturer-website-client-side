@@ -21,7 +21,7 @@ const AddProduct = () => {
       description:e.description
       
     }
-    fetch('http://localhost:5000/products',{
+    fetch('https://mighty-everglades-10453.herokuapp.com/products',{
       method:'POST',
       headers:{
         'content-type':'application/json',

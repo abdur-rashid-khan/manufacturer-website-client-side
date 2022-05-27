@@ -12,7 +12,7 @@ const AllUser = () => {
   const navigate = useNavigate();
 
   const { isLoading, error, data: user, refetch } = useQuery('userData', () =>
-        fetch('http://localhost:5000/user', {
+        fetch('https://mighty-everglades-10453.herokuapp.com/user', {
           method: 'GET',
           headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`,

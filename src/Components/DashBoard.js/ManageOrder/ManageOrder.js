@@ -14,7 +14,7 @@ const ManageOrder = () => {
   const navigate = useNavigate();
 
   const { isLoading, error, data: manageOrder, refetch } = useQuery('userData', () =>
-    fetch('http://localhost:5000/manage-order', {
+    fetch('https://mighty-everglades-10453.herokuapp.com/manage-order', {
       method: 'GET',
       headers: {
         authorization: `Bearer ${localStorage.getItem('token')}`,

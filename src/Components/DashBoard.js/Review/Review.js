@@ -22,7 +22,7 @@ const Review = () => {
       review:e.review
     }
     console.log(userData)
-    fetch('http://localhost:5000/add-review',{
+    fetch('https://mighty-everglades-10453.herokuapp.com/add-review',{
       method:'POST',
       headers:{
         'content-type':'application/json',

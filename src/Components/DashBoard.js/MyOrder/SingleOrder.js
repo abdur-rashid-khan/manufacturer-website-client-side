@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const SingleOrder = ({ orderData , index , refetch}) => {
   const deleteOrderItems = (id) =>{
 
-    fetch(`http://localhost:5000/cancel-order-item/${id}`,{
+    fetch(`https://mighty-everglades-10453.herokuapp.com/cancel-order-item/${id}`,{
       method:"DELETE",
       headers:{
         'content-type':'application/json',
