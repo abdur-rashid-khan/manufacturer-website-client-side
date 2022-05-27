@@ -31,8 +31,9 @@ const Blog = () => {
         <strong className='text-slate-700'>Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts</strong>
         <p className='text-slate-700'> If you write a function component and realize you need to add some state to it, previously you had to convert it to a class. Now you can use a Hook inside the existing function component.  for useing other many components  use by hook</p>
       </div>
-      <div>
-        The purpose is to validate that each unit of the application code performs as expected. Unit Testing is done during the development (coding phase) of an application by the developers. Unit Tests isolate a section of code and verify its correctness
+      <div className='px-2'>
+        <strong  className='text-slate-700'>What is a unit test? Why should write unit tests?</strong>
+        <p>The purpose is to validate that each unit of the application code performs as expected. Unit Testing is done during the development (coding phase) of an application by the developers. Unit Tests isolate a section of code and verify its correctness</p>
       </div>
     </div>
   );
