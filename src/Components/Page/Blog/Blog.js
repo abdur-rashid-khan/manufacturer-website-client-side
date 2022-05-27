@@ -15,13 +15,13 @@ const Blog = () => {
       <div className="py-2">
         <strong className='text-slate-700'>What are the different ways to manage a state in a React application?</strong>
         <p className='text-slate-700'>ans :  There are four main types of state you need to properly manage in your React apps:
-            <ol>
-              <li>1. Local state</li>
-              <li>2. Global state</li>
-              <li>3. Server state</li>
-              <li>4. URL state</li>
-            </ol>
-          </p>
+          <ol>
+            <li>1. Local state</li>
+            <li>2. Global state</li>
+            <li>3. Server state</li>
+            <li>4. URL state</li>
+          </ol>
+        </p>
       </div>
       <div className="py-2">
         <strong className='text-slate-700'>How does prototypical inheritance work?</strong>
@@ -30,6 +30,9 @@ const Blog = () => {
       <div className="py-2">
         <strong className='text-slate-700'>Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts</strong>
         <p className='text-slate-700'> If you write a function component and realize you need to add some state to it, previously you had to convert it to a class. Now you can use a Hook inside the existing function component.  for useing other many components  use by hook</p>
+      </div>
+      <div>
+        The purpose is to validate that each unit of the application code performs as expected. Unit Testing is done during the development (coding phase) of an application by the developers. Unit Tests isolate a section of code and verify its correctness
       </div>
     </div>
   );
