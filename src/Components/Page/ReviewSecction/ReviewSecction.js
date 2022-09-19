@@ -82,7 +82,7 @@ const ReviewSecction = () => {
   };
   return (
     <section id="review">
-      <div className='container mx-auto px-4 my-6'>
+      <div className='container mx-auto px-4'>
         <div className='text-center py-10 text-4xl font-serif font-medium text-blue-700'>
           <h1>Latest Review</h1>
         </div>
@@ -91,7 +91,7 @@ const ReviewSecction = () => {
           latestReview.map(r => <DisplayReview review={r} key={r._id}></DisplayReview>)
         }
       </div> */}
-        <div>
+        <div >
           <Slider {...settings}>
             {
               latestReview.map(r => <DisplayReview review={r} key={r._id}></DisplayReview>)
