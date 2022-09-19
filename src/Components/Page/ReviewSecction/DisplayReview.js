@@ -6,8 +6,8 @@ import './Review.css'
 const DisplayReview = ({ review }) => {
   const { name, rating, review: userReview } = review;
   return (
-    <div className='p-4 py-6'>
-      <div class="card w-full bg-[#ffff] border border-white shadow-2xl cursor-pointer ">
+    <div className='p-4 py-6 '>
+      <div class="card w-full bg-[#ffff] border border-white shadow-2xl cursor-pointer rounded">
         <div className="card-body">
           <div className="user_img">
             <div className="">
