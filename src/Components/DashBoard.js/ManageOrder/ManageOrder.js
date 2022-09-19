@@ -34,12 +34,12 @@ const ManageOrder = () => {
   }
   return (
     <div>
-      <div className="text-center">
-        <h1>Manage Order</h1>
+      <div className="text-start">
+        <h1 className='text-3xl text-slate-600 pb-3 font-serif font-semibold'>Manage Order</h1>
 
       </div>
       <div className="">
-        <table className="table table-compact max-w-full m-auto">
+        <table className="table table-compact w-full m-auto">
           <thead>
             <tr className='active text-center'>
               <th>Serial</th>

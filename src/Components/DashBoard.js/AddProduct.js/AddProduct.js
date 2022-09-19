@@ -46,7 +46,7 @@ const AddProduct = () => {
     })
   }
   return (
-    <div className="md:max-w-lg w-96 bg-slate-200 p-4 rounded mx-auto ">
+    <div className="md:w-[400px] w-96 bg-slate-200 p-4 rounded mx-auto ">
       <div className="header text-center pt-6 ">
         <h1 className='text-2xl  font-serif text-slate-700'>Add Product</h1>
       </div>

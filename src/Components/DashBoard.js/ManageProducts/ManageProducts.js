@@ -38,7 +38,7 @@ const ManageProducts = () => {
         <h1 className='text-xl text-slate-600'>Manage Products </h1>
       </div>
       <div className="">
-        <table className="table table-compact max-w-full m-auto">
+        <table className="table table-compact w-full m-auto">
           <thead>
             <tr className='active text-center'>
               <th>Serial</th>
