@@ -46,7 +46,7 @@ const Header = () => {
                 <CustomLink to={"/"}>Home</CustomLink>
               </li>
               <li className='pt-4 text-lg text-white'>
-                <CustomLink to={"/tools-parts"}>Tools and Parts</CustomLink>
+                <CustomLink to={"/tools-parts"}>Auto Parts</CustomLink>
               </li>
               {/* <li className='pt-4 text-lg text-white'>
                 <CustomLink to={"/reviews"}>Reviews</CustomLink>
@@ -59,7 +59,7 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <Link to={'/'} className="btn btn-ghost normal-case text-xl">Max Tools and Parts</Link>
+          <Link to={'/'} className="btn btn-ghost normal-case text-xl">AUTMA AUTO PARTS</Link>
         </div>
         <div className="navbar-end">
           <div className="navbar-center hidden lg:flex">
@@ -68,7 +68,7 @@ const Header = () => {
                 <CustomLink to={"/"}>Home</CustomLink>
               </li>
               <li>
-                <CustomLink to={"/tools-parts"}>Tools and Parts</CustomLink>
+                <CustomLink to={"/tools-parts"} className='capitalize'>Auto Parts</CustomLink>
               </li>
               {/* <li>
                 <CustomLink to={"/reviews"}>Reviews</CustomLink>
@@ -81,8 +81,10 @@ const Header = () => {
               }
             </ul>
           </div>
+          {/* // <button onClick={logOutBtn} className="text-black font-semibold"></button> : */}
           {
-            user ? <button onClick={logOutBtn} className="text-black font-semibold">logOut</button> :
+            user ? <img className='w-12 h-h12 rounded-full' src={user.photoURL} alt="" />
+              :
               <Link to={'/login'} >Login</Link>
           }
 
