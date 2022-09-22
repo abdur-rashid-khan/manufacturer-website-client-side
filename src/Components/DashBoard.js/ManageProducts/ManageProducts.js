@@ -14,7 +14,7 @@ const ManageProducts = () => {
   const navigate = useNavigate();
 
   const { isLoading, error, data: manageProducts, refetch } = useQuery('userData', () =>
-    fetch('https://mighty-everglades-10453.herokuapp.com/manage-products', {
+    fetch('https://shy-hoodie.cyclic.app/manage-products', {
       method: 'GET',
       headers: {
         authorization: `Bearer ${localStorage.getItem('token')}`,

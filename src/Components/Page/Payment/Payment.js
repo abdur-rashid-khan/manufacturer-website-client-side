@@ -20,7 +20,7 @@ const Payment = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://mighty-everglades-10453.herokuapp.com/order/${id}`, {
+    fetch(`https://shy-hoodie.cyclic.app/order/${id}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',

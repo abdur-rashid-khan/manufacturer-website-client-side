@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
+import Loading from "../Shear/Loading/Loading";
 
 const LoadingProducts = () => {
-  const [products , setProducts] = useState([]);
-  useEffect(()=>{
-    fetch('https://mighty-everglades-10453.herokuapp.com/products')
-    .then(res=>res.json())
-    .then(data => setProducts(data))
-  },[])
-  return[products]
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    fetch('https://shy-hoodie.cyclic.app/products')
+      .then(res => res.json())
+      .then(data => setProducts(data))
+  }, [])
+  // if (products.length === 0) {
+  //   return <Loading />
+  // }
+  return [products]
 };
 
 export default LoadingProducts;

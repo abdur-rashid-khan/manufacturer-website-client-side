@@ -6,7 +6,7 @@ import auth from '../../../firebase.init';
 const MadeAdmin = ({ user, refetch, index }) => {
   const adminBtn = () => {
 
-    fetch(`https://mighty-everglades-10453.herokuapp.com/admin/${user.email}`, {
+    fetch(`https://shy-hoodie.cyclic.app/admin/${user.email}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -29,7 +29,7 @@ const MadeAdmin = ({ user, refetch, index }) => {
   }
   // delete
   const deleteBtn = () => {
-    fetch(`https://mighty-everglades-10453.herokuapp.com/user/delete/${user.email}`, {
+    fetch(`https://shy-hoodie.cyclic.app/user/delete/${user.email}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',

@@ -12,7 +12,7 @@
 // const ReviewSecction = () => {
 //   const navigate = useNavigate();
 //   const { isLoading, error, data: review, refetch } = useQuery('reviewSection', () =>
-//     fetch('https://mighty-everglades-10453.herokuapp.com/review', {
+//     fetch('https://shy-hoodie.cyclic.app/review', {
 //       method: 'GET',
 //       headers: {
 //         authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -183,7 +183,7 @@ const ReviewSecction = () => {
 
   return (
     <section id="review">
-      <div>
+      <div className="pt-10">
         <h1 className="lg:text-4xl md:text-3xl text-2xl font-semibold px-4 leading-10 pt-8 uppercase  text-center title_line">
           What our client says
         </h1>

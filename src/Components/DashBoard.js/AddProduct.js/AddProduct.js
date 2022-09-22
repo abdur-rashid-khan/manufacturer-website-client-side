@@ -21,7 +21,7 @@ const AddProduct = () => {
       description:e.description
       
     }
-    fetch('https://mighty-everglades-10453.herokuapp.com/products',{
+    fetch('https://shy-hoodie.cyclic.app/products',{
       method:'POST',
       headers:{
         'content-type':'application/json',

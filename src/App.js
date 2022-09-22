@@ -21,6 +21,7 @@ import PageNotFound from './Components/PageNotFound/PageNotFound';
 import Purchase from './Components/Page/Purchase/Purchase';
 import Payment from './Components/Page/Payment/Payment';
 import Footer from './Components/Page/Footer/Footer';
+import AllBlog from './Components/Page/Blog/AllBlog';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />
-        <Route path='/blog' element={<Blog />} />
+        <Route path='/blog' element={<AllBlog />} />
         <Route path="dashboard" element={<RequireAuth>
           <DashBoard />
         </RequireAuth>} >

@@ -5,7 +5,7 @@ const useAdmin = (user) => {
   const [adminLoading , setAdminLoading] = useState(true);
   const email = user?.email;
   useEffect(()=>{
-    fetch(`https://mighty-everglades-10453.herokuapp.com/admin/${email}`,{
+    fetch(`https://shy-hoodie.cyclic.app/admin/${email}`,{
       method: 'GET',
       headers:{
         'content-type':'application/json',
