@@ -85,7 +85,7 @@ const Blog = () => {
                   }
 
                 </div>
-                <Link to={`/purchase/${p._id}`} className='text-center bg-[#00c749] hover:bg-[#00c749d7] w-full py-2 rounded-b mt-4 text-white inline-block hover:tracking-[2px] ease-in-out duration-500'>Purchase</Link>
+                <Link to={`/purchase/${p.id}`} className='text-center bg-[#00c749] hover:bg-[#00c749d7] w-full py-2 rounded-b mt-4 text-white inline-block hover:tracking-[2px] ease-in-out duration-500 font-serif tracking-[1px]'>Details</Link>
               </div>)
           }
         </div>
