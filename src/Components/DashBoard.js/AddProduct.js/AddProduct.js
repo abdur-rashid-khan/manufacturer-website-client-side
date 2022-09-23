@@ -21,7 +21,7 @@ const AddProduct = () => {
       description:e.description
       
     }
-    fetch('https://shy-hoodie.cyclic.app/products',{
+    fetch('https://manufacturerserverside.onrender.com/products',{
       method:'POST',
       headers:{
         'content-type':'application/json',

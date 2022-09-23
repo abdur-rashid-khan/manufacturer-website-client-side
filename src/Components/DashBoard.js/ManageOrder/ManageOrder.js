@@ -14,7 +14,7 @@ const ManageOrder = () => {
   const navigate = useNavigate();
 
   const { isLoading, error, data: manageOrder, refetch } = useQuery('userData', () =>
-    fetch('https://shy-hoodie.cyclic.app/manage-order', {
+    fetch('https://manufacturerserverside.onrender.com/manage-order', {
       method: 'GET',
       headers: {
         authorization: `Bearer ${localStorage.getItem('token')}`,

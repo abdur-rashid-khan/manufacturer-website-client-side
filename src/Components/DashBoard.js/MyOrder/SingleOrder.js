@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const SingleOrder = ({ orderData , index , refetch}) => {
   const deleteOrderItems = (id) =>{
 
-    fetch(`https://shy-hoodie.cyclic.app/cancel-order-item/${id}`,{
+    fetch(`https://manufacturerserverside.onrender.com/cancel-order-item/${id}`,{
       method:"DELETE",
       headers:{
         'content-type':'application/json',

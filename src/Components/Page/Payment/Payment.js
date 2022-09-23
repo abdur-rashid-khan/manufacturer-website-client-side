@@ -20,7 +20,7 @@ const Payment = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://shy-hoodie.cyclic.app/order/${id}`, {
+    fetch(`https://manufacturerserverside.onrender.com/order/${id}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',

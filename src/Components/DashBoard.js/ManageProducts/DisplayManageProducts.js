@@ -6,7 +6,7 @@ import auth from '../../../firebase.init';
 const DisplayManageProducts = ({ manageProducts, index, refetch }) => {
   // delete
   const deleteBtn = () => {
-    fetch(`https://shy-hoodie.cyclic.app/manage-products/${manageProducts._id}`, {
+    fetch(`https://manufacturerserverside.onrender.com/manage-products/${manageProducts._id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',

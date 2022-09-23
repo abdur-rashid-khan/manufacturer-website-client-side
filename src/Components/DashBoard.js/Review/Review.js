@@ -22,7 +22,7 @@ const Review = () => {
       review:e.review
     }
     console.log(userData)
-    fetch('https://shy-hoodie.cyclic.app/add-review',{
+    fetch('https://manufacturerserverside.onrender.com/add-review',{
       method:'POST',
       headers:{
         'content-type':'application/json',

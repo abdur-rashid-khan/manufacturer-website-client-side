@@ -14,7 +14,7 @@ const ManageProducts = () => {
   const navigate = useNavigate();
 
   const { isLoading, error, data: manageProducts, refetch } = useQuery('userData', () =>
-    fetch('https://shy-hoodie.cyclic.app/manage-products', {
+    fetch('https://manufacturerserverside.onrender.com/manage-products', {
       method: 'GET',
       headers: {
         authorization: `Bearer ${localStorage.getItem('token')}`,

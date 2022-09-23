@@ -13,7 +13,7 @@ const Purchase = () => {
   const { id } = useParams();
   const navigate = useNavigate()
   const { isLoading, error, data: products } = useQuery('singleProducts', () =>
-    fetch(`https://shy-hoodie.cyclic.app/purchase/${id}`, {
+    fetch(`https://manufacturerserverside.onrender.com/purchase/${id}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
@@ -47,7 +47,7 @@ const Purchase = () => {
       email:user.email,
       productsId:id,
     }
-    fetch(`https://shy-hoodie.cyclic.app/order/${id}`,{
+    fetch(`https://manufacturerserverside.onrender.com/order/${id}`,{
       method:"post",
       headers:{
         'content-type':'application/json',

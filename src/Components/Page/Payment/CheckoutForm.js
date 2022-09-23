@@ -14,7 +14,7 @@ const CheckoutForm = ({ orderProducts }) => {
 
   useEffect(() => {
     if(price){
-      fetch(`https://shy-hoodie.cyclic.app/create-payment-intent`, {
+      fetch(`https://manufacturerserverside.onrender.com/create-payment-intent`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -79,7 +79,7 @@ const {paymentIntent , error:intentError}= await stripe.confirmCardPayment(
       console.log(paymentIntent.id);
       const payment = paymentIntent.id;
       console.log(payment)
-      fetch(`https://shy-hoodie.cyclic.app/payment/${_id}`,{
+      fetch(`https://manufacturerserverside.onrender.com/payment/${_id}`,{
         method:"PUT",
         headers:{
           'content-type':'application.json',

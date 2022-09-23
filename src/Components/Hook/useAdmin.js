@@ -5,7 +5,7 @@ const useAdmin = (user) => {
   const [adminLoading , setAdminLoading] = useState(true);
   const email = user?.email;
   useEffect(()=>{
-    fetch(`https://shy-hoodie.cyclic.app/admin/${email}`,{
+    fetch(`https://manufacturerserverside.onrender.com/admin/${email}`,{
       method: 'GET',
       headers:{
         'content-type':'application/json',

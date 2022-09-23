@@ -14,7 +14,7 @@ const MyOrder = () => {
   const [user, loading] = useAuthState(auth);
   const email = user.email;
   const { isLoading, error, data, refetch } = useQuery('orderDataForUser', () =>
-    fetch(`https://shy-hoodie.cyclic.app/my-order/${email}`, {
+    fetch(`https://manufacturerserverside.onrender.com/my-order/${email}`, {
       method: 'GET',
       headers: {
         authorization: `Bearer ${localStorage.getItem('token')}`,

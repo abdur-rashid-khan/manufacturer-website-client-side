@@ -4,7 +4,7 @@ import Loading from "../Shear/Loading/Loading";
 const LoadingProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch('https://shy-hoodie.cyclic.app/products')
+    fetch('https://manufacturerserverside.onrender.com/products')
       .then(res => res.json())
       .then(data => setProducts(data))
   }, [])

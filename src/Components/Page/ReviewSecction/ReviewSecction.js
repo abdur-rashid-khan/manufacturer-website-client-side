@@ -12,7 +12,7 @@
 // const ReviewSecction = () => {
 //   const navigate = useNavigate();
 //   const { isLoading, error, data: review, refetch } = useQuery('reviewSection', () =>
-//     fetch('https://shy-hoodie.cyclic.app/review', {
+//     fetch('https://manufacturerserverside.onrender.com/review', {
 //       method: 'GET',
 //       headers: {
 //         authorization: `Bearer ${localStorage.getItem('token')}`,
